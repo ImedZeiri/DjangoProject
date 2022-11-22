@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '+16a2x$b1$h1wv2tw#lcy-%wwvf*7b$j%vy-(-$qoc@gp@l7r6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.137.150', 'JobFinder.com']
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'frontpage'
@@ -40,10 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
-    'job',
-    'notification',
-    'userprofile'
+    'apps.core',
+    'apps.job',
+    'apps.notification',
+    'apps.userprofile'
 ]
 
 MIDDLEWARE = [
@@ -69,7 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'notification.context_processors.notifications'
+                'apps.notification.context_processors.notifications'
             ],
         },
     },
